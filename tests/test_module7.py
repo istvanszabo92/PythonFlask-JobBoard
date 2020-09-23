@@ -189,10 +189,10 @@ def test_app_redirect_to_employer_module7():
     url_for_exists = "url_for" in dir(app)
     assert url_for_exists, "`url_for` has not been imported from flask."
 
-    redirect_call = "redirect:employer:url_for:employer_id:employer_id" in get_functions(
-        app.review
-    ) or "redirect:employer:employer:url_for:employer_id:employer_id" in get_functions(
-        app.review
+    redirect_call = (
+        "redirect:employer:url_for:employer_id:employer_id" in get_functions(app.review)
+        or "redirect:employer:employer:url_for:employer_id:employer_id"
+        in get_functions(app.review)
     )
     assert redirect_call, "In the `if` are you redirecting back to the employer page?"
 
